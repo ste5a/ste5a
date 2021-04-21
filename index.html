@@ -251,12 +251,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.te5a.cn/2021/04/11/hello/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://sm.ms/image/I7ZLzb4Dger8UVN">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="te5a's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/11/hello/" itemprop="url">hello</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-11T17:28:54+08:00">
+                2021-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          hello world
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/11/hello/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.te5a.cn/2021/04/07/%E5%A6%82%E4%BD%95%E6%89%A9%E5%B1%95centos%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://sm.ms/image/I7ZLzb4Dger8UVN">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -321,35 +445,14 @@
 
       
         
-          
-            <h1 id="如何扩展centos系统的内存空间？"><a href="#如何扩展centos系统的内存空间？" class="headerlink" title="如何扩展centos系统的内存空间？"></a>如何扩展centos系统的内存空间？</h1><h2 id="应用场景：当Centos系统插入新的磁盘扩容时，扩展Centos系统内磁盘可用空间"><a href="#应用场景：当Centos系统插入新的磁盘扩容时，扩展Centos系统内磁盘可用空间" class="headerlink" title="应用场景：当Centos系统插入新的磁盘扩容时，扩展Centos系统内磁盘可用空间"></a>应用场景：当Centos系统插入新的磁盘扩容时，扩展Centos系统内磁盘可用空间</h2><font size=5>
-[root@localhost ~]# fdisk -l  
-//查看磁盘信息
-
-<p><img src="https://i.loli.net/2021/04/20/YigTrm2snPGtRl8.png" alt="1.png"><br>//可以看出磁盘总空间有64.4G，但系统可用空间只有38.7G</p>
-<p>[root@localhost ~]# df -h<br>//查看系统目录文件<br><img src="https://i.loli.net/2021/04/20/GmWRTDzhfM7n4x6.png" alt="2.png"></p>
-<p>增加分区：<br>[root@localhost ~]# fdisk /dev/sda<br>//进入磁盘管理系统，根据第一条命令知道未分配的磁盘空间在/dev/sda目录<br><img src="https://i.loli.net/2021/04/20/XNczGlFUj4Ih7Aa.png" alt="3.png">  </p>
-<p>输入m查看选项：<br><img src="https://i.loli.net/2021/04/20/u3GNzIBiedJ6tpm.png" alt="4.png"></p>
-<p>我们需要增加一个新分区，所以输入“n”<br><img src="https://i.loli.net/2021/04/20/IO3uMQdzkWsYyKZ.png" alt="5.png"><br>输入“n”之后按提示输入“p”选择基本分区<br>之后选择分区号、开始和结束磁盘扇区，如果没有特殊要求，按三次回车，默认就可以（默认分区号会在原有分区号上+1，默认扇区会选择全部未分配的扇区）</p>
-<p>输入t修改磁盘类型<br>选择分区号3<br>输入8e修改磁盘类型为linux lvm<br><img src="https://i.loli.net/2021/04/20/XxUqTvmdyCth26r.png" alt="6.png"></p>
-<p>输入w来写入系统，之后重启系统：<br><img src="https://i.loli.net/2021/04/20/BchYQn1k5sSXgPb.png" alt="7.png"><br><img src="https://i.loli.net/2021/04/20/OzWLcIN5pd9RSVC.png" alt="8.png"></p>
-<p>初始化分区，进入卷组：<br>使用vgdisplay 查看虚拟卷组：<br><img src="https://i.loli.net/2021/04/20/wBETqAdULz53kGH.png" alt="9.png"></p>
-<p>为卷组centos添加新的物理卷sda3增加卷组容量<br><img src="https://i.loli.net/2021/04/20/8N1SDc47R2ZUTBr.png" alt="10.png"></p>
-<p>扩展逻辑卷大小：</p>
-<p> lvextend -L +19.5G /dev/mapper/centos-root<br><img src="https://i.loli.net/2021/04/20/rHG6QB1gizkjaAS.png" alt="11.png"></p>
-<p>初始化新创建的分区：<br> pvcreate /dev/sda3<br><img src="https://i.loli.net/2021/04/20/lLZXrunogf2JP4E.png" alt="12.png"></p>
-<p>为centos卷组添加新的物理卷sda3，增加卷容量：<br>vgextend centos /dev/sda3<br><img src="https://i.loli.net/2021/04/20/BrcANkCMmoJbw6z.png" alt="13.png"></p>
-<p>扩展逻辑卷的大小：<br>    要先用“df-h”查看需要扩展的逻辑卷的名称<br><img src="https://i.loli.net/2021/04/20/9GkftKS4FVAPTZ5.png" alt="14.png"></p>
-<p>lvextend -L +19.5G /dev/mapper/centos-root<br><img src="https://i.loli.net/2021/04/20/PMGI6Jkz9eYuQvh.png" alt="15.png"></p>
-<p>修改完逻辑卷大小之后要重新加载才会生效</p>
-<p>使用： resize2fs /dev/mapper/centos-root 命令来重新加载<br><img src="https://i.loli.net/2021/04/20/jrdezfV9XKSWA1w.png" alt="16.png"><br>//使用这条命令加载可能会出现报错</p>
-<p>解决方法：<br>使用：cat /etc/fstab | grep centos-root 来查看文件系统时xfs<br><img src="https://i.loli.net/2021/04/20/EMVoltDu7cf49XW.png" alt="17.png"></p>
-<p>xfs文件系统通过以下命令来扩展磁盘空间：<br> xfs_growfs /dev/mapper/centos-root<br><img src="https://i.loli.net/2021/04/20/dk3XLeKD51fahn2.png" alt="18.png"><br>//可见逻辑文件大小已经被扩展了</p>
-<p>再次查看文件系统大小：<br><img src="https://i.loli.net/2021/04/20/In2ENAHwRyfWhmT.png" alt="19.png"><br>//可以看到系统可用空间已经被扩展了</p>
-</font>
-
-
-          
+          扩展centos系统内存空间
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/07/%E5%A6%82%E4%BD%95%E6%89%A9%E5%B1%95centos%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -418,6 +521,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="https://sm.ms/image/I7ZLzb4Dger8UVN"
+                alt="" />
+            
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -429,7 +536,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
